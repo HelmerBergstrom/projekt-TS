@@ -7,9 +7,19 @@
 }
 
 body {
+    height: 100%;
+    background-color: #ffe8c4;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 h1 {
     font-size: 2em;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    text-align: center;
 }
