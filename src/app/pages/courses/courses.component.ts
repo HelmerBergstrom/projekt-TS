@@ -13,12 +13,16 @@ import { CourseDataService } from '../../services/course-data.service';
 export class CoursesComponent {
     
   courses: Courses[] = [];
+  uniqueSubject: String[] = []
 
   constructor(private courseDataService: CourseDataService ) {}
 
   ngOnInit() {
       this.courseDataService.getCourses().subscribe((courses) => {
       this.courses = courses;
+
+      const subjects = courses.map(course => course.subject);
+      this.uniqueSubject = [...new Set(subjects)]; // Skapar ett nytt "Set" av ämnen utan dubletter.
     })
   }
 }

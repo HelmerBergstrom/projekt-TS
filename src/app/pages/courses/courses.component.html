@@ -8,7 +8,7 @@
     <div>
         <p> Välj ämne: </p>
         <select name="subjects" id="subjects">
-            <option value="subjects" *ngFor="let course of courses"> {{ course.subject }}</option>
+            <option value="subjects" *ngFor="let subject of uniqueSubject" [value]="subject"> {{ subject }}</option>
         </select>
     </div>
 </section>
