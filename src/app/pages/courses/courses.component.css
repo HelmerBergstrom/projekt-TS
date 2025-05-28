@@ -5,3 +5,11 @@ h1 {
     font-family: 'Courier New', Courier, monospace;
     margin-top: 50px;
 }
+thead {
+    background-color: #718093;
+    color: #f5f6fa;
+}
+tbody {
+    background-color: #353b48;
+    color: #f5f6fa;
+}

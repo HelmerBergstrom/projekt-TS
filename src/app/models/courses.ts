@@ -2,7 +2,7 @@ export interface Courses {
         "courseCode": String,
         "subjectCode": String,
         "level": String,
-        "progression": "A" | "B" | "C",
+        "progression": String,
         "courseName": String,
         "points": Number,
         "institutionCode": String,
