@@ -1,4 +1,17 @@
-<h1> KURSLISTA </h1>
+<h1> KURSER </h1>
+
+<section>
+    <div>
+        <label for="seekCourses"> Filtrera kurser: </label>
+        <input type="text" id="seekCourses" placeholder="Filtrera kurser..."> 
+    </div>
+    <div>
+        <p> Välj ämne: </p>
+        <select name="subjects" id="subjects">
+            <option value="subjects" *ngFor="let course of courses"> {{ course.subject }}</option>
+        </select>
+    </div>
+</section>
 
 <table>
     <thead> 
