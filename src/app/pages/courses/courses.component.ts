@@ -13,16 +13,31 @@ import { CourseDataService } from '../../services/course-data.service';
 export class CoursesComponent {
     
   courses: Courses[] = [];
-  uniqueSubject: String[] = []
+  filteredCourses: Courses[] = [];
+  filterInput: String = "";
+
+  uniqueSubject: String[] = [];
 
   constructor(private courseDataService: CourseDataService ) {}
 
   ngOnInit() {
       this.courseDataService.getCourses().subscribe((courses) => {
       this.courses = courses;
+      this.filteredCourses = courses;
 
       const subjects = courses.map(course => course.subject);
       this.uniqueSubject = [...new Set(subjects)]; // Skapar ett nytt "Set" av ämnen utan dubletter.
     })
+  }
+
+  filter(): void {
+    const filter = this.filterInput.toLowerCase();
+
+    this.filteredCourses = this.courses.filter(course => 
+      course.courseCode.toLowerCase().includes(filter) || 
+      course.courseName.toLowerCase().includes(filter)
+    );
+
+
   }
 }
