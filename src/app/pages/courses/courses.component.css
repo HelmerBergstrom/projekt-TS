@@ -83,3 +83,12 @@ tr:hover {
     font-family: 'Courier New', Courier, monospace;
     color: white;
 }
+
+.tableHeader {
+    cursor: pointer;
+}
+
+.tableHeader:hover {
+    background-color: black;
+    color: #f5f6fa;
+}

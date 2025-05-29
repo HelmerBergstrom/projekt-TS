@@ -19,6 +19,9 @@ export class CoursesComponent {
   uniqueSubject: String[] = [];
   selectedSubject: string = "allSubjects";
 
+  sortColumn: string = "";
+  sortAscending: boolean = true;
+
   constructor(private courseDataService: CourseDataService ) {}
 
   ngOnInit() {
@@ -45,5 +48,28 @@ export class CoursesComponent {
 
       return matchesText && matchesSubject;
     });
+  }
+
+  sortBy(column: keyof Courses): void {
+
+    if(this.sortColumn === column) {
+      this.sortAscending = !this.sortAscending
+    } else {
+      this.sortColumn = column;
+      this.sortAscending = true;
+    }
+
+
+    this.filteredCourses.sort((a, b) => {
+      const aCourse = a[column]?.toString().toLowerCase?.() ?? a[column];
+      const bCourse = b[column]?.toString().toLowerCase?.() ?? b[column];
+
+      if(aCourse < bCourse)
+        return this.sortAscending ? -1 : 1;
+      if(aCourse > bCourse)
+        return this.sortAscending ? 1 : -1;
+        
+      return 0;
+    })
   }
 }

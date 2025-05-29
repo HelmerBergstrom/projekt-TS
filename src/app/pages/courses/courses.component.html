@@ -9,7 +9,7 @@
         <p> Välj ämne: </p>
         <select name="subjects" id="subjects" [(ngModel)]="selectedSubject" (change)="filter()">
             <option value="allSubjects" selected> Alla </option>
-            <option value="subjects" *ngFor="let subject of uniqueSubject" [value]="subject"> {{ subject }}</option>
+            <option *ngFor="let subject of uniqueSubject" [value]="subject"> {{ subject }}</option>
         </select>
     </div>
 </section>
@@ -20,10 +20,10 @@
 
 <table>
     <thead> 
-        <th> Kurskod </th>
-        <th> Kursnamn </th>
-        <th> Poäng </th>
-        <th> Ämne </th>
+        <th class="tableHeader" (click)="sortBy('courseCode')"> Kurskod </th>
+        <th class="tableHeader" (click)="sortBy('courseName')"> Kursnamn </th>
+        <th class="tableHeader" (click)="sortBy('points')"> Poäng </th>
+        <th class="tableHeader" (click)="sortBy('subject')"> Ämne </th>
         <th> Kursplan </th>
         <th> Lägg till </th>
     </thead>
