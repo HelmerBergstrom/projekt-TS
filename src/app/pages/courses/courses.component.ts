@@ -14,9 +14,10 @@ export class CoursesComponent {
     
   courses: Courses[] = [];
   filteredCourses: Courses[] = [];
-  filterInput: String = "";
+  filterInput: string = "";
 
   uniqueSubject: String[] = [];
+  selectedSubject: string = "allSubjects";
 
   constructor(private courseDataService: CourseDataService ) {}
 
@@ -32,12 +33,17 @@ export class CoursesComponent {
 
   filter(): void {
     const filter = this.filterInput.toLowerCase();
+    const selected = this.selectedSubject;
 
-    this.filteredCourses = this.courses.filter(course => 
-      course.courseCode.toLowerCase().includes(filter) || 
-      course.courseName.toLowerCase().includes(filter)
-    );
+    this.filteredCourses = this.courses.filter(course => {
+      const matchesText =
+        course.courseCode.toLowerCase().includes(filter) ||
+        course.courseName.toLowerCase().includes(filter);
 
+      const matchesSubject = selected === 'allSubjects' || 
+      course.subject === selected;
 
+      return matchesText && matchesSubject;
+    });
   }
 }

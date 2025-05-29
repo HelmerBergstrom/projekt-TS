@@ -18,13 +18,16 @@ div {
     flex-direction: column;
     margin: 30px;
 }
-label, p {
+#filterLabel, p {
     font-size: 20px;
 }
-input {
+#filterInput {
     padding: 10px;
     width: 300px;
     font-size: 18px;
+}
+#subjectCheckboxes {
+    margin: 0;
 }
 select {
     height: 40px;
@@ -71,4 +74,12 @@ td a:hover {
 }
 tr:hover {
     background-color: #718093;
+}
+
+#numberOfCourses {
+    text-align: center;
+}
+#numberOfCourses p {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
 }

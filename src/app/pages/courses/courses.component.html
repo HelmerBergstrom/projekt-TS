@@ -1,20 +1,22 @@
 <h1> KURSER </h1>
 
-<div id="numberOfCourses">
-    <p> Nedan visas just nu _____ kurser av totalt ____ </p>
-</div>
 <section>
     <div>
-        <label for="seekCourses"> Filtrera kurser: </label>
-        <input type="text" id="seekCourses" [(ngModel)]="filterInput" (input)="filter()" placeholder="Filtrera kurser..."> 
+        <label id="filterLabel" for="seekCourses"> Filtrera kurser: </label>
+        <input type="text" id="filterInput" [(ngModel)]="filterInput" (input)="filter()" placeholder="Filtrera kurser..."> 
     </div>
     <div>
         <p> Välj ämne: </p>
-        <select name="subjects" id="subjects">
+        <select name="subjects" id="subjects" [(ngModel)]="selectedSubject" (change)="filter()">
+            <option value="allSubjects" selected> Alla </option>
             <option value="subjects" *ngFor="let subject of uniqueSubject" [value]="subject"> {{ subject }}</option>
         </select>
     </div>
 </section>
+
+<div id="numberOfCourses">
+    <p> Nedan visas just nu {{ filteredCourses.length }} kurser av totalt {{ courses.length }} stycken. </p>
+</div>
 
 <table>
     <thead> 
