@@ -104,3 +104,19 @@ tr:hover {
     background-color: #353b48;
     color: white;
 }
+
+#showMoreCourses button {
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    margin: auto;
+    padding: 20px;
+}
+
+#showMoreCourses button:hover {
+    background-color: #353b48;
+    color: white;
+}

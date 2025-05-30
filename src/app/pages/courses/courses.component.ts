@@ -24,6 +24,8 @@ export class CoursesComponent {
 
   savedCourses: Courses[] = [];
 
+  renderCourses: number = 50;
+
   constructor(private courseDataService: CourseDataService ) {}
 
   ngOnInit() {
@@ -50,6 +52,8 @@ export class CoursesComponent {
 
       return matchesText && matchesSubject;
     });
+
+    this.renderCourses = 50;
   };
 
   sortBy(column: keyof Courses): void {
@@ -86,4 +90,12 @@ export class CoursesComponent {
     return this.savedCourses.some(c => 
       c.courseCode === course.courseCode)
   };
+
+  get visibleCourses(): Courses[] {
+    return this.filteredCourses.slice(0, this.renderCourses)
+  }
+
+  showMoreCourses(): void {
+    this.renderCourses += 50;
+  }
 }

@@ -15,7 +15,7 @@
 </section>
 
 <div id="numberOfCourses">
-    <p> Nedan visas just nu {{ filteredCourses.length }} kurser av totalt {{ courses.length }} stycken. </p>
+    <p> Nedan visas just nu {{ visibleCourses.length }} kurser av totalt {{ courses.length }} stycken. </p>
 </div>
 
 <table>
@@ -29,7 +29,7 @@
     </thead>
 
     <tbody>
-        <tr *ngFor="let course of filteredCourses">
+        <tr *ngFor="let course of visibleCourses">
             <td>{{ course.courseCode }} </td>
             <td>{{ course.courseName }} </td>
             <td>{{ course.points }} </td>
@@ -49,3 +49,9 @@
         </tr>
     </tbody>
 </table>
+
+<div id="showMoreCourses">
+    <button (click)="showMoreCourses()">
+        Visa fler kurser!
+    </button>
+</div>
