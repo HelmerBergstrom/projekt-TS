@@ -51,7 +51,7 @@
 </table>
 
 <div id="showMoreCourses">
-    <button (click)="showMoreCourses()">
+    <button (click)="showMoreCourses()" [disabled]="renderCourses >= filteredCourses.length">
         Visa fler kurser!
     </button>
 </div>

@@ -3,6 +3,7 @@ import { Courses } from '../../models/courses';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CourseDataService } from '../../services/course-data.service';
+import { __addDisposableResource } from 'tslib';
 
 @Component({
   selector: 'app-courses',
@@ -96,6 +97,7 @@ export class CoursesComponent {
   }
 
   showMoreCourses(): void {
-    this.renderCourses += 50;
-  }
+    if (this.renderCourses < this.filteredCourses.length) {
+      this.renderCourses += 50;
+  }};
 }
