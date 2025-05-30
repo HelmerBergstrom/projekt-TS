@@ -16,11 +16,13 @@ export class CoursesComponent {
   filteredCourses: Courses[] = [];
   filterInput: string = "";
 
-  uniqueSubject: String[] = [];
+  uniqueSubject: string[] = [];
   selectedSubject: string = "allSubjects";
 
   sortColumn: string = "";
   sortAscending: boolean = true;
+
+  savedCourses: Courses[] = [];
 
   constructor(private courseDataService: CourseDataService ) {}
 
@@ -31,8 +33,8 @@ export class CoursesComponent {
 
       const subjects = courses.map(course => course.subject);
       this.uniqueSubject = [...new Set(subjects)]; // Skapar ett nytt "Set" av ämnen utan dubletter.
-    })
-  }
+    });
+  };
 
   filter(): void {
     const filter = this.filterInput.toLowerCase();
@@ -48,7 +50,7 @@ export class CoursesComponent {
 
       return matchesText && matchesSubject;
     });
-  }
+  };
 
   sortBy(column: keyof Courses): void {
 
@@ -57,7 +59,7 @@ export class CoursesComponent {
     } else {
       this.sortColumn = column;
       this.sortAscending = true;
-    }
+    };
 
 
     this.filteredCourses.sort((a, b) => {
@@ -71,5 +73,17 @@ export class CoursesComponent {
         
       return 0;
     })
-  }
+  };
+
+  addCourse(course: Courses): void {
+    this.savedCourses.push(course);
+    localStorage.setItem("savedCourses", JSON.stringify(this.savedCourses));
+
+    console.log(this.savedCourses)
+  };
+
+  isCourseAdded(course: Courses): Boolean {
+    return this.savedCourses.some(c => 
+      c.courseCode === course.courseCode)
+  };
 }

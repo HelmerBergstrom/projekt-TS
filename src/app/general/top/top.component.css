@@ -30,9 +30,6 @@ h1 {
 
 #secondDiv {
     padding: 20px 40px;
-    border-bottom: 5px solid cornflowerblue;
-    border-right: 5px solid cornflowerblue;
-    width: 100%;
 }
 strong, p {
     font-size: 20px;

@@ -35,7 +35,17 @@
             <td>{{ course.points }} </td>
             <td>{{ course.subject }}</td>
             <td><a [href]="course.syllabus"> Kursplan </a></td>
-            <td> Lägg till </td>
+            <td class="addCourse">
+                <ng-container *ngIf="!isCourseAdded(course); else addedLabel">
+                
+                    <button (click)="addCourse(course)">
+                        Lägg till 
+                    </button>
+                </ng-container>
+                <ng-template #addedLabel>
+                    <span> Tillagd </span>
+                </ng-template>
+            </td>
         </tr>
     </tbody>
 </table>
