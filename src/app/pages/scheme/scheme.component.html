@@ -1,1 +1,17 @@
 <h1> RAMSCHEMA </h1>
+
+<table>
+    <thead>
+        <th> Kurskod </th>
+        <th> Kursnamn </th>
+        <th> Poäng </th>
+        <th> Ämne </th>
+        <th> Kursplan </th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let course of savedCourses">
+            <td> {{ course.courseCode }}</td>
+        </tr>
+    </tbody>
+</table>
