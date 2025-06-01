@@ -84,8 +84,16 @@ export class CoursesComponent {
 
 
     this.filteredCourses.sort((a, b) => {
-      const aCourse = a[column]?.toString().toLowerCase?.() ?? a[column];
-      const bCourse = b[column]?.toString().toLowerCase?.() ?? b[column];
+     let aCourse = a[column];
+     let bCourse = b[column];
+
+     if(column === 'points') {
+      aCourse = Number(aCourse);
+      bCourse = Number(bCourse);
+     } else {
+      aCourse = aCourse?.toString().toLowerCase?.() ?? '';
+      bCourse = bCourse?.toString().toLowerCase?.() ?? '';
+     }
 
       if(aCourse < bCourse)
         return this.sortAscending ? -1 : 1;
