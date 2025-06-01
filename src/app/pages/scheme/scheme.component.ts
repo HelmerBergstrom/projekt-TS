@@ -17,7 +17,28 @@ export class SchemeComponent {
   ngOnInit() {
     this.schemeService.savedCourses.subscribe(courses => {
       this.savedCourses = courses;
-    })
+    });
+  };
+
+  // Tar bort kurs från ramschemat vid klick på "Ta bort"-knappen.
+  removeCourse(removeCourse: Courses) {
+    const updatedCourses = this.savedCourses.filter(course => 
+      course.courseCode !== removeCourse.courseCode);
+
+    localStorage.removeItem("savedCourses");
+      console.log(this.savedCourses);
+
+    this.schemeService.updateSavedCourses(updatedCourses)
+  };
+
+  get totalPoints(): number {
+    return this.savedCourses.reduce((sum, course) => sum + course.points, 0)
+  }
+
+  get totalCourses(): number {
+    const courses = this.savedCourses.length;
+
+    return courses;
   }
 
 }

@@ -1,5 +1,14 @@
 <h1> RAMSCHEMA </h1>
 
+<section>
+    <div>
+        Totala poäng i ramschemat: {{ totalPoints }}
+    </div>
+    <div> 
+        Antal kurser: {{ totalCourses }}
+    </div>
+</section>
+
 <table>
     <thead>
         <th> Kurskod </th>
@@ -18,7 +27,7 @@
             <td> {{ course.subject }}</td>
             <td><a [href]="course.syllabus"> Kursplan </a></td>
             <td class="deleteCourse">
-                <button>
+                <button (click)="removeCourse(course)">
                     Ta bort
                 </button>
             </td>
