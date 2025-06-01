@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Courses } from '../../models/courses';
+import { SchemeService  } from '../../services/scheme.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CourseDataService } from '../../services/course-data.service';
-import { __addDisposableResource } from 'tslib';
 
 @Component({
   selector: 'app-courses',
@@ -14,28 +14,44 @@ import { __addDisposableResource } from 'tslib';
 export class CoursesComponent {
     
   courses: Courses[] = [];
+
+  // Filtrering av kurser.
   filteredCourses: Courses[] = [];
   filterInput: string = "";
 
+  // Ämnen.
   uniqueSubject: string[] = [];
   selectedSubject: string = "allSubjects";
 
+  // Kolumnsortering.
   sortColumn: string = "";
   sortAscending: boolean = true;
 
+  // Sparade kurser
   savedCourses: Courses[] = [];
 
+  // Renderade kurser, visar 50 kurser i taget.
   renderCourses: number = 50;
 
-  constructor(private courseDataService: CourseDataService ) {}
+  // Använder courseData-service och Scheme-service.
+  constructor(
+    private courseDataService: CourseDataService,
+    private schemeService: SchemeService
+   ) {}
 
+   // ngOnInit som körs direkt när komponenten laddats.
   ngOnInit() {
+    // Hämtar kurser. 
       this.courseDataService.getCourses().subscribe((courses) => {
       this.courses = courses;
       this.filteredCourses = courses;
 
       const subjects = courses.map(course => course.subject);
       this.uniqueSubject = [...new Set(subjects)]; // Skapar ett nytt "Set" av ämnen utan dubletter.
+    });
+
+    this.schemeService.savedCourses.subscribe(courses => {
+      this.savedCourses = courses;
     });
   };
 
@@ -81,8 +97,7 @@ export class CoursesComponent {
   };
 
   addCourse(course: Courses): void {
-    this.savedCourses.push(course);
-    localStorage.setItem("savedCourses", JSON.stringify(this.savedCourses));
+    this.schemeService.addCourse(course);
 
     console.log(this.savedCourses)
   };
