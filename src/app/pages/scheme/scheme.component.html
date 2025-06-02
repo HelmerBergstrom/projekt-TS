@@ -46,6 +46,23 @@
     </button>
 </div>
 
+<div *ngIf="savedCourses.length > 0" id="saveButton">
+    <button (click)="saveScheme()"> Spara ramschema </button>
+</div>
+
+
 <div *ngIf="savedCourses.length > 0" id="clearButton">
     <button (click)="clearScheme()"> Rensa schema </button>
+</div>
+
+<div id="savedSchemes" *ngIf="savedSchemes.length > 0">
+    <h2> Sparade Scheman </h2>
+    <div *ngFor="let scheme of savedSchemes">
+        <p>
+            <strong> Kurskoder: </strong>
+            <span *ngFor="let courseCode of scheme">
+                {{ courseCode }}
+            </span>
+        </p>
+    </div>
 </div>

@@ -11,6 +11,9 @@ import { Courses } from '../../models/courses';
 })
 export class SchemeComponent {
   savedCourses: Courses[] = [];
+  
+  // Dubbel [] då det ska lagra flera arrayer av kurskoder.
+  savedSchemes: string[][] = []; 
 
   constructor(private schemeService: SchemeService) {}
 
@@ -18,6 +21,12 @@ export class SchemeComponent {
     this.schemeService.savedCourses.subscribe(courses => {
       this.savedCourses = courses;
     });
+
+    const saved = localStorage.getItem('savedSchemes');
+
+    if(saved) {
+      this.savedSchemes = JSON.parse(saved)
+    }
   };
 
   // Tar bort kurs från ramschemat vid klick på "Ta bort"-knappen.
@@ -47,6 +56,12 @@ export class SchemeComponent {
     localStorage.removeItem("savedCourses");
 
     this.schemeService.updateSavedCourses([]);
+  }
+
+  saveScheme() {
+    const theScheme = this.savedCourses.map(course => course.courseCode );
+    this.savedSchemes.push(theScheme);
+    localStorage.setItem('savedSchemes', JSON.stringify(this.savedSchemes))
   }
 
 }
