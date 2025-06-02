@@ -74,3 +74,64 @@ section {
 div {
     margin: 10px;
 }
+.course-card {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    table {
+        display: none;
+    }
+
+    .course-card {
+        display: block;
+        background-color: #353b48;
+        color: #f5f6fa;
+        padding: 15px;
+        margin: auto;
+        border-bottom: 10px solid #1e272e;
+        border-radius: 5px;
+        width: 500px;
+    }
+    .course-card:hover {
+        background-color: #718093;
+    }
+
+    .course-card p, .course-card button {
+        margin: 5px 0;  
+        padding: 5px;
+    }
+
+    .course-card button {
+        padding: 7px;
+        background-color: #f5f6fa;
+        font-size: 20px;
+        cursor: pointer;
+        width: 100%;
+    }
+    .course-card button:hover {
+        background-color: #353b48;
+        color: white;
+    }
+    .course-card a {
+        color: white;
+    }
+    .course-card a:hover {
+        color: blue;
+    }
+    .course-card span {
+        color: white;
+        width: 100%;
+        text-align: center;
+        margin-left: 180px;
+    }
+}
+
+@media (max-width: 550px) {
+    .course-card {
+        width: 400px;
+    }
+    .course-card span {
+        margin-left: 130px;
+    }
+}

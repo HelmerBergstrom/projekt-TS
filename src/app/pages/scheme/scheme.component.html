@@ -31,7 +31,17 @@
                     Ta bort
                 </button>
             </td>
-
         </tr>
     </tbody>
 </table>
+
+<div class="course-card" *ngFor="let course of savedCourses">
+    <p><strong> Kurskod: </strong> {{ course.courseCode }}</p>
+    <p><strong> Kursnamn: </strong> {{ course.courseName }}</p>
+    <p><strong> Poäng: </strong> {{ course.points }}</p>
+    <p><strong> Ämne: </strong> {{ course.subject }}</p>
+    <p><a [href]="course.syllabus"> Kursplan </a></p>
+    <button (click)="removeCourse(course)">
+        Ta bort
+    </button>
+</div>
