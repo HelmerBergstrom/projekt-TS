@@ -50,6 +50,17 @@
     </tbody>
 </table>
 
+<!-- Responsiv design -->
+<div class="course-card" *ngFor="let course of visibleCourses">
+    <p><strong> Kurskod: </strong> {{ course.courseCode }}</p>
+    <p><strong> Kursnamn: </strong> {{ course.courseName }}</p>
+    <p><strong> Poäng: </strong> {{ course.points }}</p>
+    <p><strong> Ämne: </strong> {{ course.subject }}</p>
+    <p><a [href]="course.syllabus"> Kursplan </a></p>
+    <button *ngIf="!isCourseAdded(course)" (click)="addCourse(course)"> Lägg till </button>
+    <span *ngIf="isCourseAdded(course)"> Tillagd i ramschemat! </span>
+</div>
+
 <div id="showMoreCourses">
     <button (click)="showMoreCourses()" [disabled]="renderCourses >= filteredCourses.length">
         Visa fler kurser!
