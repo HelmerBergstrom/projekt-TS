@@ -1,19 +1,20 @@
-nav {
+#menu {
     background-color: #353b48;
     padding: 10px;
+    transition: 1s ease-in;
 }
 
-ul {
+#menu ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-li {
+#menu li {
     list-style: none;
     margin: 20px;
     font-size: 26px;
 }
-a {
+#menu a {
     padding: 20px;
     text-decoration: none;
     color: white;
@@ -21,10 +22,65 @@ a {
     font-family: 'Courier New', Courier, monospace;
 }
 
-a:hover {
+#menu a:hover {
     text-decoration: underline;
 }
 
-.active-menu {
+#menu a.active-menu {
     text-decoration: underline;
+}
+
+#smallMenu {
+    display: none;
+}
+#hamburger {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    #smallMenu {
+        display: none;
+        flex-direction: column;
+        background-color: #353b48;
+    }
+    #smallMenu.open {
+        display: flex;
+    }
+    #smallMenu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        margin-bottom: 20px;
+    }
+    #smallMenu li {
+        padding: 5px;
+        background-color: #1e272e;
+        margin: 5px;
+    }
+    #smallMenu li a {
+        padding: 10px;
+        color: #f5f5f5;
+        font-size: 20px;
+        text-decoration: none;
+        margin: 10px;
+    }
+    .active-menu {
+        background-color: #353b48;
+    }
+    #menu {
+        display: none;
+    }
+    #hamburger {
+        display: block;
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        background-color: #353b48;
+    }
+    #hamburger:hover {
+        background-color: #1b2127;
+    }
 }

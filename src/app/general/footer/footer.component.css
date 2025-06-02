@@ -1,6 +1,12 @@
 p {
-    background-color: rgb(208, 151, 77);
+    background-color: #353b48;
     color: white;
     font-size: 20px;
-    padding: 7px;
+    padding: 14px;
+}
+
+@media (max-width: 1000px) {
+    p {
+        padding: 7px;
+    }
 }

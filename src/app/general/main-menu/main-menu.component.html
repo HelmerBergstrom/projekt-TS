@@ -1,5 +1,18 @@
-<nav>
+<nav id="menu">
     <ul>
+        <li><a href="#"> STARTSIDA </a></li>
+        <li><a routerLink="/courses" routerLinkActive="active-menu"> KURSER </a></li>
+        <li><a routerLink="/scheme" routerLinkActive="active-menu"> RAMSCHEMA </a></li>
+    </ul>
+</nav>
+<!-- Hamburgare "&#9776;"-->
+<div id="hamburger" (click)="toggleSmallMenu()">
+    &#9776;
+</div>
+
+<nav id="smallMenu" [class.open]="isSmallMenuOpen">
+    <ul>
+        <li><a href="#"> STARTSIDA </a></li>
         <li><a routerLink="/courses" routerLinkActive="active-menu"> KURSER </a></li>
         <li><a routerLink="/scheme" routerLinkActive="active-menu"> RAMSCHEMA </a></li>
     </ul>

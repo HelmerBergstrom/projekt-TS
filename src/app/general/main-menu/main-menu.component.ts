@@ -8,5 +8,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './main-menu.component.css'
 })
 export class MainMenuComponent {
+  isSmallMenuOpen = false;
 
+  toggleSmallMenu() {
+      this.isSmallMenuOpen = !this.isSmallMenuOpen;
+  }
 }
