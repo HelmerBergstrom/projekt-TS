@@ -1,6 +1,6 @@
 <h1> RAMSCHEMA </h1>
 
-<section>
+<section id="firstSection">
     <div>
         Totala poäng i ramschemat: {{ totalPoints }}
     </div>
@@ -44,4 +44,8 @@
     <button (click)="removeCourse(course)">
         Ta bort
     </button>
+</div>
+
+<div *ngIf="savedCourses.length > 0" id="clearButton">
+    <button (click)="clearScheme()"> Rensa schema </button>
 </div>

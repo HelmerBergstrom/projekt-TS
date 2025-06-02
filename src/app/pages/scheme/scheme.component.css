@@ -10,7 +10,7 @@ h1 {
 table {
     max-width: 1200px;
     margin: auto;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 thead {
     background-color: #718093;
@@ -62,7 +62,7 @@ td:nth-child(6) {
     color: white;
 }
 
-section {
+#firstSection {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,11 +71,27 @@ section {
     font-size: 20px;
 }
 
-div {
+#firstSection div {
     margin: 10px;
 }
 .course-card {
     display: none;
+}
+
+#clearButton {
+    display: flex;
+    justify-content: center;
+}
+#clearButton button {
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #f5f6fa;
+    cursor: pointer;
+}
+#clearButton button:hover {
+    background-color: #718093;
+    color: white;
 }
 
 @media (max-width: 800px) {

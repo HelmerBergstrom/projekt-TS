@@ -1,59 +1,33 @@
-# ProjektTS
+# Om projektet - HB´s Universitet
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+Förutom grundkraven för projektet har en startsida tillämpats för webbplatsen. 
 
-## Development server
+Detta arbete är projektarbetet för kursen "Programmering i TypeScript". HB´s Universitet är ett fiktivt universitet som ger besökaren möjlighet att utforska kurser och möjligheten att skapa ett personligt ramschema. Syftet med projektet är att med hjälp av Angular och TypeScript, skapa en modern webbplats inriktat mot universitet, kurser och ramschema.
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
+# Verktyg och utveckling
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+För att lyckas med projektet har verktyg och hjälpmedel använts för att skapa webbplatsen. Funktionaliteten för webbplatsen är skapad med hjälp av en JSON-fil som innehåller kurser. Dessa kurser behandlas via TypeScript och HTML.
 
-## Code scaffolding
+### Funktioner på webbplatsen
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+##### KURSER-sidan
 
-```bash
-ng generate component component-name
-```
+På denna sida visas en tabell med alla kurser som finns hos det fiktiva universitetet som standard. Användare har möjlighet att sortera tabellen utifrån kurskod, kursnamn, poäng(högskolepoäng) och ämne. Användare kan även använda sökfält för att filtrera tabellen utifrån en sökfras, och kan även välja ett ämne i en meny och därmed endast visa kurser för det ämnet.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Tabellen innehåller:
+- Kurskod
+- Kursnamn
+- Poäng(Högskolepoäng)
+- Ämne
+- Länk till kursplan
+- Knapp för att lägga till i ramschemat. Knappen visar "Tillagd" efter klick.
 
-```bash
-ng generate --help
-```
+##### RAMSCHEMA-sidan
 
-## Building
+Denna sida visar likt föregående sida en tabell på tillagda kurser. Denna tabell är lik den förra, med undantag för funktionen att lägga till i ramschemat. Denna sida har istället en knapp för att ta bort enskilda kursen från ramschemat i den kolumnen. Denna sida har även en knapp under tabellen för att rensa hela ramschemat vid klick. Knappen visas endast om det finns kurser i schemat.
 
-To build the project run:
 
-```bash
-ng build
-```
+##### Startsida
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Startsidan har ingen funktionalitet, utan är endast till för att välkomna besökare med lite information om det fiktiva universitetet.

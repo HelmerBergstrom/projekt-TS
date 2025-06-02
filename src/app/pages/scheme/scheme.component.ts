@@ -41,4 +41,12 @@ export class SchemeComponent {
     return courses;
   }
 
+  clearScheme() {
+    this.savedCourses = [];
+
+    localStorage.removeItem("savedCourses");
+
+    this.schemeService.updateSavedCourses([]);
+  }
+
 }
