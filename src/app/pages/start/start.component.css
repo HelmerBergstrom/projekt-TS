@@ -9,12 +9,12 @@ h1 {
 h2 {
     color: white;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
     font-size: 26px;
 }
 
-section {
+#firstSection {
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: row;
@@ -33,7 +33,7 @@ p {
     padding: 20px;
     font-size: 20px;
     color: white;
-    font-weight: bold;
+    line-height: 1.5;
 }
 
 .background-image {
@@ -48,15 +48,42 @@ figcaption {
     font-style: italic;
 }
 
+#secondSection {
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 70px;
+    gap: 20px;
+}
+#textDiv2 {
+    max-width: 100%;
+    width: 700px;
+    background-color: #353b48;
+    border-radius: 20px;
+}
+
+ul {
+    background-color: #353b48;
+    padding: 30px;
+    border-radius: 10px;
+    list-style: none;
+}
+li {
+    color: white;
+    margin: 10px;
+    font-size: 20px;
+}
+
 @media (max-width: 1200px) {
-    section {
+    #firstSection {
         flex-direction: column;
         align-items: center;
     }
 }
 
 @media (max-width: 600px) {
-    #textDiv {
+    #textDiv, #textDiv2 {
         max-width: 100%;
         width: 400px;
         background-color: #353b48;
