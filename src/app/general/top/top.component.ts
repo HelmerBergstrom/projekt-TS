@@ -8,5 +8,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './top.component.css'
 })
 export class TopComponent {
-    headerImg = '/android-chrome-192x192.png';
+  public headerImg: string = '/android-chrome-192x192.png';
 }
