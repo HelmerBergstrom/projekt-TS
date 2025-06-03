@@ -1,6 +1,6 @@
 # Om projektet - HB´s Universitet
 
-Förutom grundkraven för projektet har en startsida tillämpats för webbplatsen. 
+Förutom grundkraven för projektet har en startsida tillämpats för webbplatsen. Även funktionalitet för att spara ramscheman har lagts till och funktionalitet för att ta bort enskilda sparade ramscheman.
 
 Detta arbete är projektarbetet för kursen "Programmering i TypeScript". HB´s Universitet är ett fiktivt universitet som ger besökaren möjlighet att utforska kurser och möjligheten att skapa ett personligt ramschema. Syftet med projektet är att med hjälp av Angular och TypeScript, skapa en modern webbplats inriktat mot universitet, kurser och ramschema.
 
@@ -25,9 +25,9 @@ Tabellen innehåller:
 
 ##### RAMSCHEMA-sidan
 
-Denna sida visar likt föregående sida en tabell på tillagda kurser. Denna tabell är lik den förra, med undantag för funktionen att lägga till i ramschemat. Denna sida har istället en knapp för att ta bort enskilda kursen från ramschemat i den kolumnen. Denna sida har även en knapp under tabellen för att rensa hela ramschemat vid klick. Knappen visas endast om det finns kurser i schemat.
+Denna sida visar likt föregående sida en tabell på tillagda kurser. Denna tabell är lik den förra, med undantag för funktionen att lägga till i ramschemat. Denna sida har istället en knapp för att ta bort enskilda kursen från ramschemat i den kolumnen. Denna sida har även en knapp under tabellen för att rensa hela ramschemat vid klick. Knappen visas endast om det finns kurser i schemat. Under tabellen på denna sida finns även en knapp för att spara ramschemat. Vid klick på denna knapp, som endast visas när det finns kurser i ramschemat, läggs kursens namn och poäng i minnet och visas längst ned på sidan i rutor. I dessa rutor visas totala antalet poäng och antalet kurser för det sparade ramschemat. En knapp finns i varje ruta för att ta bort sparade schemat.
 
 
 ##### Startsida
 
-Startsidan har ingen funktionalitet, utan är endast till för att välkomna besökare med lite information om det fiktiva universitetet.
+Startsidan har ingen funktionalitet, utan är endast till för att välkomna besökare med lite information om det fiktiva universitetet med en välkomsttext, en bild och en lista med innehållet på hemsidan/universitetet.
