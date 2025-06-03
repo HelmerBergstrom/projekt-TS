@@ -111,15 +111,25 @@ td:nth-child(6) {
     background-color: #353b48;
     padding: 20px;
     color: white;
+    margin: 20px;
 }
 #savedSchemes p {
     display: flex;
     flex-direction: column;
+    font-size: 18px;
 }
 #savedSchemes strong {
     font-size: large;
-    text-decoration: underline;
     margin-bottom: 10px;
+}
+
+#savedSchemes button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    background-color: #f5f6fa;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 @media (max-width: 800px) {

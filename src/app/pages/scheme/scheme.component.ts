@@ -67,4 +67,16 @@ export class SchemeComponent {
     localStorage.setItem('savedSchemes', JSON.stringify(this.savedSchemes))
   }
 
+  removeSaved(index: number) {
+    this.savedSchemes.splice(index, 1);
+    localStorage.setItem('savedSchemes', JSON.stringify(this.savedSchemes));
+  }
+
+  schemePoints(scheme: { courseName: string; points: number }[]): number {
+    return scheme.reduce((sum, course) => sum + course.points, 0);
+  }
+
+  schemeCourseCount(scheme: { courseName: string; points: number }[]): number {
+    return scheme.length;
+  }
 }

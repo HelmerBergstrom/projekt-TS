@@ -58,13 +58,21 @@
 
 <div id="savedSchemes" *ngIf="savedSchemes.length > 0">
     <h2> Sparade Scheman </h2>
-    <div *ngFor="let scheme of savedSchemes">
+    <div *ngFor="let scheme of savedSchemes; let i = index">
         <p>
-            <strong> Kurser </strong>
+            <strong> KURSER </strong>
             <span *ngFor="let savedCourses of scheme">
                 {{ savedCourses.courseName }}
-                {{ savedCourses.points }}
+                - 
+                {{ savedCourses.points }} poäng
+            </span>
+            <br>
+            <span>
+                <strong> Totala poäng: </strong> {{ schemePoints(scheme) }}
+            <br>
+                <strong> Antal kurser: </strong> {{ schemeCourseCount(scheme) }}
             </span>
         </p>
+        <button (click)="removeSaved(i)"> Ta bort sparat schema </button>
     </div>
 </div>
