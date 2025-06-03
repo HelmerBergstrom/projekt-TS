@@ -13,7 +13,7 @@ export class SchemeComponent {
   savedCourses: Courses[] = [];
   
   // Dubbel [] då det ska lagra flera arrayer av kurskoder.
-  savedSchemes: string[][] = []; 
+  savedSchemes: { courseName: string; points: number; } [][] = []; 
 
   constructor(private schemeService: SchemeService) {}
 
@@ -59,7 +59,10 @@ export class SchemeComponent {
   }
 
   saveScheme() {
-    const theScheme = this.savedCourses.map(course => course.courseCode );
+    const theScheme = this.savedCourses.map(course => ({
+      courseName: course.courseName,
+      points: course.points
+    }));
     this.savedSchemes.push(theScheme);
     localStorage.setItem('savedSchemes', JSON.stringify(this.savedSchemes))
   }
