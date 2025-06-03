@@ -20,10 +20,10 @@
 
 <table>
     <thead> 
-        <th class="tableHeader" (click)="sortBy('courseCode')"> Kurskod </th>
-        <th class="tableHeader" (click)="sortBy('courseName')"> Kursnamn </th>
-        <th class="tableHeader" (click)="sortBy('points')"> Poäng </th>
-        <th class="tableHeader" (click)="sortBy('subject')"> Ämne </th>
+        <th class="tableHeader" (click)="sortBy('courseCode')"> Kurskod <br> {{ sortingArrow('courseCode') }}</th>
+        <th class="tableHeader" (click)="sortBy('courseName')"> Kursnamn {{ sortingArrow('courseName') }}</th>
+        <th class="tableHeader" (click)="sortBy('points')"> Poäng <br> {{ sortingArrowPoints('points') }}</th>
+        <th class="tableHeader" (click)="sortBy('subject')"> Ämne {{ sortingArrow('subject') }}</th>
         <th> Kursplan </th>
         <th> Lägg till </th>
     </thead>

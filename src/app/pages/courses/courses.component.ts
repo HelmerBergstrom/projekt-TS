@@ -104,6 +104,20 @@ export class CoursesComponent {
     })
   };
 
+  sortingArrow(column: string): string {
+    if(this.sortColumn !== column)
+      return '';
+
+    return this.sortAscending ? '⬇️' : '⬆️';
+  }
+
+  sortingArrowPoints(column: string): string {
+    if(this.sortColumn !== column)
+      return '';
+
+    return this.sortAscending ? '⬆️' : '⬇️';
+  }
+
   addCourse(course: Courses): void {
     this.schemeService.addCourse(course);
 
