@@ -6,6 +6,8 @@ import { Courses } from '../models/courses';
 @Injectable({
   providedIn: 'root'
 })
+
+// Hämtar kursdata från JSON-filen.
 export class CourseDataService {
 
   private url: string = "/miun_courses.json";

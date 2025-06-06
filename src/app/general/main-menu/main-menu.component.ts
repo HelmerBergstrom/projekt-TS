@@ -10,6 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class MainMenuComponent {
   isSmallMenuOpen = false;
 
+  // Öppnar menyn i mindre skärmbreddar.
   toggleSmallMenu() {
       this.isSmallMenuOpen = !this.isSmallMenuOpen;
   }
