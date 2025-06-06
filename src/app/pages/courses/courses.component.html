@@ -51,6 +51,14 @@
 </table>
 
 <!-- Responsiv design -->
+<div class="sortSmallScreen">
+    <h2><strong> Sortera </strong></h2>
+        <p (click)="sortBy('courseCode')"> Kurskod {{ sortingArrow('courseCode') }}</p>
+        <p (click)="sortBy('courseName')"> Kursnamn {{ sortingArrow('courseName') }}</p>
+        <p (click)="sortBy('points')"> Poäng {{ sortingArrowPoints('points') }}</p>
+        <p (click)="sortBy('subject')"> Ämne {{ sortingArrow('subject') }}</p>
+</div>
+
 <div class="course-card" *ngFor="let course of visibleCourses">
     <p><strong> Kurskod: </strong> {{ course.courseCode }}</p>
     <p><strong> Kursnamn: </strong> {{ course.courseName }}</p>
